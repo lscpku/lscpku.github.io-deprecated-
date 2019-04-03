@@ -10,8 +10,8 @@ author: lscpku
 
 # 算法分析与问题的计算复杂度
 
-{% for category in post.tags %}
-  `{{ category[0] }}`
+{% for tag in page.tags %}
+  `{{ tag[0] }}`
 {% endfor %}
 
 ---
