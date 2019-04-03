@@ -2,7 +2,7 @@
 title: 算法设计与分析(13) 算法分析与问题的计算复杂度
 categories: [blog, ada]
 tags: [复杂度, 算法分析]
-date: 2019-04-03
+date: 2019-04-03 17:00
 author: lscpku
 ---
 
@@ -10,8 +10,7 @@ author: lscpku
 
 # {{page.title}}
 
-日期：{{page.date}}
-作者：{{page.author}}
+{{page.date}} {{page.author}}
 
 {% for tag in page.tags %}`{{ tag }}` {% endfor %}
 
