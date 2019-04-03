@@ -1,6 +1,10 @@
 ---
 layout: post
-title: "算法设计与分析(13)"
+title: 算法设计与分析(13) 算法分析与问题的计算复杂度
+categories: [blog, ada]
+tags: [complexity]
+date: 2019-04-03
+author: lscpku
 ---
 
 # 算法分析与问题的计算复杂度
