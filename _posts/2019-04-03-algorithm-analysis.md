@@ -1,7 +1,7 @@
 ---
 title: 算法设计与分析(13) 算法分析与问题的计算复杂度
 categories: [blog, ada]
-tags: [complexity]
+tags: [complexity, 算分]
 date: 2019-04-03
 author: lscpku
 ---
@@ -10,7 +10,9 @@ author: lscpku
 
 # 算法分析与问题的计算复杂度
 
-`算分`
+{% for category in post.tags %}
+  `{{ category[0] }}`
+{% endfor %}
 
 ---
 
@@ -83,4 +85,4 @@ if j > n then j = 0
 
 ## 7. 通过归约确认问题计算复杂度的下界
 
-[返回主页](/)
+[返回目录](/table_of_posts.html)
