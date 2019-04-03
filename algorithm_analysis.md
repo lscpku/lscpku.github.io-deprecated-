@@ -1,4 +1,4 @@
-<script type="text/javascript" src="{{site.baseurl}}/third-party-depend/MathJax-2.6/MathJax.js?config=default"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
 # 算法分析与问题的计算复杂度
 
