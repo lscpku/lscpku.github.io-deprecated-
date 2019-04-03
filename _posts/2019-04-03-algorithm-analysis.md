@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 算法设计与分析(13) 算法分析与问题的计算复杂度
 categories: [blog, ada]
 tags: [complexity]
