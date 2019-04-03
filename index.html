@@ -142,7 +142,7 @@
 	<nav>
 		<ul class="navbar">
 			<li><a href="#1" class="navbaractive">2048</a></li>
-			<li><a href="#2">Tag2</a></li>
+			<li><a href="/table_of_posts.html">posts</a></li>
 			<li><a href="#3">Tag3</a></li>
 			<li><a href="#4">Tag4</a></li>
 		</ul>
@@ -167,16 +167,6 @@
 		<div class="smallword n32768">32768</div>
 	</div>
 	<div class="restartbtn" onclick="init();">重新开始</div>
-
-	<div>
-		<ul>
-		  {% for post in site.posts %}
-		    <li>
-		      <a href="{{ post.url }}">{{ post.title }}</a>
-		    </li>
-		  {% endfor %}
-		</ul>
-	</div>
 
 	<script type="text/javascript">
 		var obj=document.getElementById("frame_2048");
