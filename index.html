@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lsc</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body {
+		background-color: #F5F5F5;
+	}
+	h1 {
+		text-align: center;
+		font-family: Arial;
+	}
+	.navbar{
+		list-style-type: none;
+		margin-bottom: 15px;
+		padding: 0;
+		background-color: #333;
+		overflow: hidden;
+	}
+	.navbar li{
+		float: left;
+	}
+	.navbar li a{
+		display: block;
+		color: white;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+	.navbaractive{
+		background-color: #2288EE;
+	}
+	.navbar li a:hover:not(.navbaractive){
+		background-color: #111;
+	}
+	.game1 {
+		background-color: grey;
+		margin: auto;
+		width: 400px;
+		height: 400px;
+		overflow: auto;
+		border-radius: 10px;
+	}
+	.game1 div{
+		width: 80px;
+		height: 80px;
+		background-color: lightgrey;
+		line-height: 80px;
+		text-align: center;
+		margin: 10px;
+		border-radius: 10px;
+		float: left;
+		font-weight: 600;
+		color: white;
+	}
+	.game1 div{
+		font-size: 32px;
+	}
+	.game1 div.mediumword{
+		font-size: 28px;
+	}
+	.game1 div.smallword{
+		font-size: 25px;
+	}
+	.game1 .n2{
+		background-color: #FF3544;
+	}
+	.game1 .n4{
+		background-color: #E5E500;
+	}
+	.game1 .n8{
+		background-color: #FB52DD;
+	}
+	.game1 .n16{
+		background-color: #A3F545;
+	}
+	.game1 .n32{
+		background-color: #33A4FF;
+	}
+	.game1 .n64{
+		background-color: #FF9C62;
+	}
+	.game1 .n128{
+		background-color: #99A6FF;
+	}
+	.game1 .n256{
+		background-color: #53DAF4;
+	}
+	.game1 .n512{
+		background-color: #8000FF;
+	}
+	.game1 .n1024{
+		background-color: #FF7627;
+	}
+	.game1 .n2048{
+		background-color: #67BB0B;
+	}
+	.game1 .n4096{
+		background-color: #F8061E;
+	}
+	.game1 .n8192{
+		background-color: #019704;
+	}
+	.game1 .n16384{
+		background-color: #0207C4;
+	}
+	.game1 .n32768{
+		background-color: #A00000;
+	}
+	.restartbtn{
+		background-color: #333;
+		color: white;
+		margin: auto;
+		margin-top: 20px;
+		width: 200px;
+		height: 60px;
+		line-height: 60px;
+		font-size: 30px;
+		font-family: 微软雅黑;
+		text-align: center;
+		border-radius: 10px;
+	}
+	.restartbtn:hover{
+		background-color: #111;
+		cursor: pointer;
+	}
+	</style>
+
+	<script type="text/javascript">
+		var num_data=new Array();
+		var numArray=[0,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768];
+		var i;
+		var blanks;
+		var gameOver;
+		var mergeMark=new Array();
+	</script>
+</head>
+<body>
+	<header>
+		<h1>2048</h1>
+	</header>
+	<nav>
+		<ul class="navbar">
+			<li><a href="#1" class="navbaractive">2048</a></li>
+			<li><a href="#2">Tag2</a></li>
+			<li><a href="#3">Tag3</a></li>
+			<li><a href="#4">Tag4</a></li>
+		</ul>
+	</nav>
+
+	<div class="game1" id="frame_2048">
+		<div></div>
+		<div class="n2">2</div>
+		<div class="n4">4</div>
+		<div class="n8">8</div>
+		<div class="n16">16</div>
+		<div class="n32">32</div>
+		<div class="n64">64</div>
+		<div class="n128">128</div>
+		<div class="n256">256</div>
+		<div class="n512">512</div>
+		<div class="mediumword n1024">1024</div>
+		<div class="mediumword n2048">2048</div>
+		<div class="mediumword n4096">4096</div>
+		<div class="mediumword n8192">8192</div>
+		<div class="smallword n16384">16384</div>
+		<div class="smallword n32768">32768</div>
+	</div>
+	<div class="restartbtn" onclick="init();">重新开始</div>
+
+	<script type="text/javascript">
+		var obj=document.getElementById("frame_2048");
+		var classArray=["n2","n4","n8","n16","n32","n64","n128","n256","n512","mediumword n1024","mediumword n2048","mediumword n4096","mediumword n8192","smallword n16384","smallword n32768"];
+
+		function updateGrid(i){
+			obj.childNodes[2*i+1].innerHTML=""+(num_data[i]>0?num_data[i]:"");
+			obj.childNodes[2*i+1].className=classArray[Math.round(Math.log(num_data[i])/Math.log(2))-1];
+		}
+
+		function updateUI(){
+			for(i=0;i<16;i++){
+				updateGrid(i);
+			}
+		}
+
+		function init(){
+			blanks=16;
+			gameOver=false;
+			for(i=0;i<16;i++){
+				num_data[i]=0;
+			}
+			generate();
+		}
+
+		init();
+		document.addEventListener("keydown",keydown);
+
+		function keydown(event){
+			//37-L 38-U 39-R 40-D
+			if(event.keyCode<37||event.keyCode>40||gameOver){
+				return;
+			}
+			var moved=false;
+			var dirArray=[-1,-4,1,4],dir;
+			function move(targ,lb,ub,step){
+				var temp=targ+step,temp1=targ;
+				while(temp<=ub&&temp>=lb){
+					if(num_data[temp]==0) {
+						num_data[temp]=num_data[temp1];
+						num_data[temp1]=0;
+						moved=true;
+					} else if(num_data[temp]!=num_data[temp1]){
+						return;
+					} else {
+						if(mergeMark[temp]==false){
+							num_data[temp]*=2;
+							num_data[temp1]=0;
+							blanks++;
+							mergeMark[temp]=true;
+							moved=true;
+						}
+						return;
+					}
+					temp+=step;
+					temp1+=step;
+				}
+			}
+
+			for(i=0;i<16;++i)
+				mergeMark[i]=false;
+			dir=dirArray[event.keyCode-37];
+			for(i=0;i<16;++i){
+				var i1=i;
+				if(dir>0)
+					i1=15-i;
+				if(dir%2==0)
+					move(i1,0,15,dir);
+				else
+					move(i1,i1-i1%4,i1-i1%4+3,dir);
+			}
+			if(moved){
+				generate();
+			}
+		}
+
+		function generate(){
+			if(blanks==0)
+				return;
+			var temp=2;
+			if (blanks<2) {
+				temp=blanks;
+			}
+			for(i=1;i<=temp;++i){
+				var rand=Math.random();
+				if(rand==1) rand=0.999;
+				while(num_data[Math.floor(rand*16)]!=0){
+					rand=Math.random();
+					if(rand==1) rand=0.999;
+				}
+				num_data[Math.floor(rand*16)]=2;
+				blanks--;
+			}
+			updateUI();
+		}
+	</script>
+
+</body>
+</html>
