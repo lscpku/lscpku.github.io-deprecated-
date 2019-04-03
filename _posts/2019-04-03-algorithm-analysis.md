@@ -8,7 +8,10 @@ author: lscpku
 
 {% include MathJaxHead.html %}
 
-# 算法分析与问题的计算复杂度
+# {{page.title}}
+
+日期：{{page.date}}
+作者：{{page.author}}
 
 {% for tag in page.tags %}`{{ tag }}` {% endfor %}
 
