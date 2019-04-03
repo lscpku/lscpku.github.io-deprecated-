@@ -11,7 +11,7 @@ author: lscpku
 
 # {{page.title}}
 
-{{page.date}}  {{page.author}}
+{{page.date | '%B %d, %y'}}  {{page.author}}
 
 {% for tag in page.tags %}`{{ tag }}` {% endfor %}
 
