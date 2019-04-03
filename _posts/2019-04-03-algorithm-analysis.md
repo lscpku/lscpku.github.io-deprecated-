@@ -11,7 +11,7 @@ author: lscpku
 
 # {{page.title}}
 
-{{page.post_date}}       {{page.author}}
+{{page.post_date}}  {{page.author}}
 
 {% for tag in page.tags %}`{{ tag }}` {% endfor %}
 
