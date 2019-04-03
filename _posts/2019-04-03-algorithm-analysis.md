@@ -11,7 +11,7 @@ author: lscpku
 # 算法分析与问题的计算复杂度
 
 {% for tag in page.tags %}
-  `{{ tag[0] }}`
+  {{ tag[0] }}
 {% endfor %}
 
 ---
