@@ -168,6 +168,16 @@
 	</div>
 	<div class="restartbtn" onclick="init();">重新开始</div>
 
+	<div>
+		<ul>
+		  {% for post in site.posts %}
+		    <li>
+		      <a href="{{ post.url }}">{{ post.title }}</a>
+		    </li>
+		  {% endfor %}
+		</ul>
+	</div>
+
 	<script type="text/javascript">
 		var obj=document.getElementById("frame_2048");
 		var classArray=["n2","n4","n8","n16","n32","n64","n128","n256","n512","mediumword n1024","mediumword n2048","mediumword n4096","mediumword n8192","smallword n16384","smallword n32768"];
