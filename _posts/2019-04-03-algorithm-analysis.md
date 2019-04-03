@@ -6,6 +6,8 @@ date: 2019-04-03
 author: lscpku
 ---
 
+{% include head.html %}
+
 # 算法分析与问题的计算复杂度
 
 标签（空格分隔）： 算分
