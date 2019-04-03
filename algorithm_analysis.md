@@ -1,3 +1,4 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 # 算法分析与问题的计算复杂度
 
 标签（空格分隔）： 算分
