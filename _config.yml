@@ -5,5 +5,4 @@ url: http://vincenttam.github.io
 title: Blog
 author: lscpku
 simple_search: https://google.com/search
-description:
-  date_format: "ordinal"
+date_format: "ordinal"
