@@ -5,4 +5,5 @@ url: http://vincenttam.github.io
 title: Blog
 author: lscpku
 simple_search: https://google.com/search
-date_format: "ordinal"
+description: Audere est Facere!
+date_format: ordinal
