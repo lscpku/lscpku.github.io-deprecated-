@@ -86,4 +86,6 @@ if j > n then j = 0
 
 ## 7. 通过归约确认问题计算复杂度的下界
 
+---
+
 [返回目录](/table_of_posts.html)
