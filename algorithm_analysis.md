@@ -1,4 +1,4 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<script type="text/javascript" src="{{site.baseurl}}/third-party-depend/MathJax-2.6/MathJax.js?config=default"></script>
 
 # 算法分析与问题的计算复杂度
 
