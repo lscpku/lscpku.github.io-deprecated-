@@ -2,29 +2,58 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <style type="text/css">
+        body {
+            background-color: #F5F5F5;
+        }
+        .name_en{
+            font-size: 34px;
+            font-weight: bold;
+        }
+        .name_cn{
+            font-size: 24px;
+            margin: 15px 0px 0px 0px;
+        }
+        table {
+            padding: 25px;
+        }
+        td {
+            padding: 30px 15px 15px 20px;
+            line-height: 150%;
+        }
+    </style>
 </head>
 <body>
-    <table width=800>
+    <table width="900" border="0">
         <tr>
-            <td valign='top' id='avatar'>
-                This is me. <br>
-                This is me. <br>
-                This is me. <br>
-                This is me. <br>
-                This is me. <br>
-                This is me. <br>
+            <td align="right" id='avatar' width="300">
+                <img src="img/avatar_unknown.jpg" width="256" height="256">
             </td>
             <td valign='top' id='about'>
-                <h2>Shicheng Li （李世成）</h2>
+                <div class="name_en">Shicheng Li</div>
+                <div class="name_cn">李世成</div>
+                <br/>
+                <a href="eecs.pku.edu.cn">School of Electronics Engineering and Computer Science</a>
+                <br/>
+                <a href="www.pku.edu.cn">Peking University</a>
+                <br/>
+                <br/>
                 <div>
-                    <b>Email: </b>lisc99@pku.edu.cn <br>
+                    <b>Email: </b><a href="mailto:lisc99@pku.edu.cn">lisc99@pku.edu.cn</a> <br/>
+                    <b>CV: </b><a href="file/cv.pdf" download="true">here</a>
                 </div>
             </td>
         </tr>
-        <tr style="margin-top: 20px">
+        <tr>
             <td colspan="2" valign='top'>
-                I am a third-year undergraduate from Turing Class at <a href="www.pku.edu.cn">Peking University</a>. <br>
-                I am enthusiastic about natural language processing (NLP). 
+                <div id="intro">
+                    <p>
+                        I am a third-year undergraduate majoring in Computer Science and Technology at <a href="eecs.pku.edu.cn">School of Electronics Engineering and Computer Science</a> (EECS), <a href="www.pku.edu.cn">Peking University</a> (PKU). In July 2018, I was selected as a member of the <a href="">CS Turing Class</a>, an elite undergraduate program established by EECS, PKU.
+                    </p>
+                    <p>
+                        I am enthusiastic about natural language processing (NLP). Currently, I work as a research intern in <a href="https://lanco.pku.edu.cn/">Language Computing and Machine Learning Group</a> (LANCO), advised by Prof. <a href="https://xusun.org/">Xu Sun</a>.  
+                    </p>                                      
+                </div>                
             </td>
         </tr>
     </table>    
