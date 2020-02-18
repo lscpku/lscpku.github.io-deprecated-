@@ -22,7 +22,7 @@
 	- noun phrases			use a parser(especially a constituency parser)
 - tricky cases
 	- ``It is sunny``
-	- ``Every student``(what about "Every student must do his homework"?)
+	- ``Every student``
 	- ``No student``
 	- ``The best donut in the world``: unclear
 	- ``100 miles``
@@ -37,3 +37,26 @@
 - Related concept of coreference in linguistics: **anaphora**
 	- When a term(anaphor) refers to another term(antecedent)
 	- The interpretation of the anaphor is in some way determined by the interpretation of the antecedent
+- Anaphora vs Coreference:
+    - anaphora: (textual relationship) he $\to$ Obama
+      coreference: Obama & Barack Obama
+    - Not all anaphoric relations are coreferential
+        - No dancer twisted her knee
+        - Every dancer twisted her knee
+        - We went to see **a concert** last night. **The tickets** were really expensive. (bridging anaphora, but not coreference)
+- Anaphora vs Cataphora:
+    - Originally, anaphora for references before mention, cataphora for behind.
+    - In modern linguistics, two cases both referred to as anaphora
+    - In NLP, always look backward for reference
+
+### Coreference Models
+1. Rule-based
+    - pronominal anaphora resolution(the intersection of anaphora and coreference)
+2. Mention Pair
+3. Mention Ranking
+4. Clustering
+
+### Traditional pronominal anaphora resolution: Hobbs' naive algorithm
+- Only for finding the reference of pronouns
+1. Begin at the NP immediately dominating the pronoun
+2. Go up tree to first NP or S. Call this X,
