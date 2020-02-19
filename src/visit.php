@@ -7,7 +7,7 @@
         $dom->xmlVersion = '1.0';
         $dom->formatOutput = true;
         $root = $dom->createElement('content');
-        $visitor = $dom->createElement('visitor', num);
+        $visitor = $dom->createElement('visitor', $num);
         $dom->appendChild($root);
         $root->appendChild($visitor);
     echo $num;
