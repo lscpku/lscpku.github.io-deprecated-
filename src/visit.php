@@ -10,5 +10,6 @@
     $visitor = $dom->createElement('visitor', $num);
     $dom->appendChild($root);
     $root->appendChild($visitor);
+    $dom->save($file_name);
     echo $num;
 ?>
