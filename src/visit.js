@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (this.readyState == 4 && this.status == 200) {
             var i;
             var xmlDoc = this.responseXML;
-            var x = xmlDoc.getElementsByTagName("COUNTER");
+            var x = xmlDoc.getElementsByTagName("counter");
             console.log(x[0].childNodes[0].nodeValue);
         }
     };
